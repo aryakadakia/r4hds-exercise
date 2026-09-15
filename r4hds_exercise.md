@@ -398,17 +398,24 @@ Drawing off the examples above, can you recreate the chart shown here?
 ![](images/vis-exercise.png)
 
 ``` r
-p10 <- ggplot(
-  data = penguins,
-  aes(x = sex, y = flipper_len, color = sex)) +
-  geom_bar() + 
+p10 <- penguins %>%
+  filter(!is.na(sex)) %>%
+  ggplot(
+  aes(x = sex, y = flipper_length_mm, fill = sex)) +
+  geom_boxplot() + 
+  facet_wrap(~ island) +
   labs(
     title = "Distribution of flipper length by sex among adult foraging penguins on three Antarctic Islands",
     y = "Flipper length (mm)",
-    caption = "Data source: Palmer Penguins R Package"
-  )
+    caption = "Source: Gorman et al (2014)"
+  ) +
+  theme(plot.caption = element_text(hjust = 0.5), 
+        plot.title = element_text(hjust = 0.5, size=9), 
+        axis.title.x = element_blank())
 
-# p10
+p10
 ```
+
+<img src="r4hds_exercise_files/figure-gfm/recreate-plot-1.png" alt="" width="200%" />
 
 ------------------------------------------------------------------------
