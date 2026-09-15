@@ -19,6 +19,8 @@ knitr::opts_chunk$set(echo = TRUE) # show code by default
 
 # Overview 
 
+Hello!
+
 The examples and exercises in this document are designed to help you you revise some cores skills for using R for Health Data Science, in particular
 
 1. Literate Programming 
