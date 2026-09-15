@@ -409,13 +409,13 @@ p10 <- penguins %>%
     y = "Flipper length (mm)",
     caption = "Source: Gorman et al (2014)"
   ) +
-  theme(plot.caption = element_text(hjust = 0.5), 
+  theme(plot.caption = element_text(hjust = 0.5, size = 8), 
         plot.title = element_text(hjust = 0.5, size=9), 
         axis.title.x = element_blank())
 
 p10
 ```
 
-<img src="r4hds_exercise_files/figure-gfm/recreate-plot-1.png" alt="" width="200%" />
+<img src="r4hds_exercise_files/figure-gfm/recreate-plot-1.png" alt="" width="80%" />
 
 ------------------------------------------------------------------------

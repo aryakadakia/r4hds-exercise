@@ -368,7 +368,7 @@ p9
 Drawing off the examples above, can you recreate the chart shown here? 
 
 ![](images/vis-exercise.png)
-```{r recreate-plot, out.width="200%"}
+```{r recreate-plot, out.width="80%", fig.width=10}
 
 p10 <- penguins %>%
   filter(!is.na(sex)) %>%
@@ -381,7 +381,7 @@ p10 <- penguins %>%
     y = "Flipper length (mm)",
     caption = "Source: Gorman et al (2014)"
   ) +
-  theme(plot.caption = element_text(hjust = 0.5), 
+  theme(plot.caption = element_text(hjust = 0.5, size = 8), 
         plot.title = element_text(hjust = 0.5, size=9), 
         axis.title.x = element_blank())
 
