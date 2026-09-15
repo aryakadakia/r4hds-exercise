@@ -1,6 +1,7 @@
 HDAT9700 Statistical Modelling II
 ================
-Mark Hanly
+Arya Kadakia <br>
+2026-09-15
 
 # Overview
 
@@ -96,30 +97,35 @@ structure through headings quotes, and other features,
 
 Try formatting the plain text below to match the formatting in the image
 
-The Role of Health Data Science\
-Health data science is a multidisciplinary field that transforms raw
+### The Role of Health Data Science
+
+Health data science is a **multidisciplinary field** that transforms raw
 data into meaningful insights. It combines statistics, computing, and
 domain knowledge to improve health outcomes.\
-A data scientist is part statistician, part computer scientist, and part
-storyteller — someone who turns data into decisions.
+A data scientist is *part statistician, part computer scientist, and
+part storyteller* — someone who turns data into decisions.
 
-Why It Matters\
-Early diagnosis — spotting hidden patterns in patient data.\
-Predictive modelling — forecasting hospital admissions and resource
-use.\
-Evidence sharing — platforms like Our World in Data make global health
-information accessible.
+### Why It Matters
 
-Tools and Methods\
-Programming languages: R, Python\
-Visualization techniques: interactive dashboards, static reports\
-Reproducibility with R Markdown and Quarto
+1.  **Early diagnosis** — spotting hidden patterns in patient data.\
+2.  *Predictive modelling* — forecasting hospital admissions and
+    resource use.\
+3.  Evidence sharing — platforms like [Our World in
+    Data](www.ourworldindata.org) make global health information
+    accessible.
 
-Looking Ahead\
-The future of health data science will rely on:\
-Outdated methods replaced by adaptive algorithms\
-Integration of real-time health monitoring Greater transparency through
-open science
+### Tools and Methods
+
+- **Programming languages:** R, Python\
+- Visualization techniques: interactive dashboards, static reports\
+- Reproducibility with `R Markdown` and Quarto
+
+### Looking Ahead
+
+- The future of health data science will rely on:\
+- ~~Outdated methods~~ replaced by adaptive algorithms\
+- Integration of **real-time health monitoring**
+- Greater transparency through open science
 
 ------------------------------------------------------------------------
 
@@ -205,21 +211,7 @@ option, as follows:
 Try updating the chunk options to (i) hide the code, (ii) suppress all
 warnings, and (iii) plot the figure at 75% of the page width.
 
-``` r
-library(palmerpenguins)
-library(ggplot2)
-
-ggplot(
-  data = penguins, 
-  aes(x = bill_depth_mm, fill = species)) + 
-  geom_density(alpha = 0.8) + 
-  scale_fill_brewer(type = 'qual')
-```
-
-    ## Warning: Removed 2 rows containing non-finite outside the scale range
-    ## (`stat_density()`).
-
-![](r4hds_exercise_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+<img src="r4hds_exercise_files/figure-gfm/unnamed-chunk-4-1.png" alt="" width="70%" />
 
 ------------------------------------------------------------------------
 
@@ -404,5 +396,19 @@ p9
 Drawing off the examples above, can you recreate the chart shown here?
 
 ![](images/vis-exercise.png)
+
+``` r
+p10 <- ggplot(
+  data = penguins,
+  aes(x = sex, y = flipper_len, color = sex)) +
+  geom_bar() + 
+  labs(
+    title = "Distribution of flipper length by sex among adult foraging penguins on three Antarctic Islands",
+    y = "Flipper length (mm)",
+    caption = "Data source: Palmer Penguins R Package"
+  )
+
+# p10
+```
 
 ------------------------------------------------------------------------
